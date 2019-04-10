@@ -1,0 +1,19 @@
+
+.room-item {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.room-item__thumb {
+    padding-right: 1.3rem;
+}
+
+.room-item__content {
+    flex-grow: 1;
+}
+
+.room-item__actions {
+    flex-shrink: 0;
+}
