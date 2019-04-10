@@ -1,0 +1,21 @@
+
+.form-header {
+    display: flex;
+    text-align: center;
+    padding-bottom: 1.3rem;
+
+    h1 {
+        font-weight: 600;
+        flex-grow: 1;
+    }
+}
+
+.form {
+    display: flex;
+}
+
+.form__input {
+    border: 1px solid #e8e8e8;
+    flex-grow: 1;
+    padding: 0 1.3rem;
+}
