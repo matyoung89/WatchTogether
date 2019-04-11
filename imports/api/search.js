@@ -37,6 +37,8 @@ Meteor.methods({
         await page.goto(`https://www.youtube.com/results?search_query=${query_term}&sp=EgIQAQ%253D%253D`)
         let html = await page.content();
 
+        await browser.close();
+
         return html;
 
         // return html;
