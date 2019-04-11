@@ -4,26 +4,31 @@ import { Videos } from '../api/videos';
 
 export default class SearchResult extends React.Component {
     addToQ () {
-        let videoId = this.props.result.id.videoId;
-        let videoTitle = this.props.result.snippet.title;
-        let videoThumb = this.props.result.snippet.thumbnails.default.url;
+        let videoUrl = this.props.result.url;
+        let videoTitle = this.props.result.title;
+        let videoThumb = this.props.result.thumb_url;
 
         let video = {
             name: videoTitle,
-            _id: videoId,
+            _id: videoUrl,
             thumb: videoThumb,
             queued: true
         }
 
-        Videos.insert(video);
+        if (Videos.find({_id: videoUrl}).fetch().length === 0) {
+            Videos.insert(video);
+        } else {
+            Videos.remove({_id: videoUrl})
+            Videos.insert(video);
+        }
     }
 
     render () {
-        let title = this.props.result.snippet.title;
-        let channel = this.props.result.snippet.channelTitle;
-        let thumbUrl = this.props.result.snippet.thumbnails.high.url;
+        let title = this.props.result.title;
+        let channel = this.props.result.channel_name;
+        let thumbUrl = this.props.result.thumb_url;
 
-        let matches = Videos.find({_id: this.props.result.id.videoId, queued: true}).fetch();
+        let matches = Videos.find({_id: this.props.result.url, queued: true}).fetch();
 
         let addButton = undefined;
         if (matches.length !== 0) {

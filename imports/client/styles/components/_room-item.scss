@@ -10,6 +10,16 @@
     padding-right: 1.3rem;
 }
 
+.room-item--done {
+    background: $grey;
+    border-color: $grey-alt;
+}
+
+.room-item--now {
+    background: $green;
+    border-color: $green-alt;
+}
+
 .room-item__content {
     flex-grow: 1;
 }
