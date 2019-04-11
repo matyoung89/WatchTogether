@@ -31,7 +31,7 @@ Meteor.methods({
 
         console.log("Beginning web scrape of YouTube because FUCK you Google");
 
-        let browser = await puppeteer.launch();
+        let browser = await puppeteer.launch({args: '--no-sandbox'});
         let page = await browser.newPage();
 
         await page.goto(`https://www.youtube.com/results?search_query=${query_term}&sp=EgIQAQ%253D%253D`)
