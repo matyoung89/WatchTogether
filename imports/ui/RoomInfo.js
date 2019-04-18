@@ -11,7 +11,7 @@ export default class RoomInfo extends React.Component {
         return (
             <div className='item room-item'>
                 <div className='room-item__content'>
-                    <p>Room Info Component goes HERE</p>
+                    <p>{Accounts.userId()} Room</p>
                 </div>
                 <div className='room-item__actions'>
                     <button className='button' onClick={this.logout.bind(this)}>leave</button>

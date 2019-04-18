@@ -8,14 +8,14 @@ import '../imports/api/player';
 Meteor.startup(() => {
   // code to run on server at startup
 
-  if (!Accounts.findUserByUsername('MyRoom')) {
+  if (!Accounts.findUserByUsername('InternetFamousCharles')) {
     Accounts.createUser({
-      username: 'MyRoom',
-      password: 'MyRoom'
+      username: 'InternetFamousCharles',
+      password: 'InternetFamousCharles'
     });
-    console.log("Created MyRoom");
+    console.log("Created InternetFamousCharles");
   } else {
-    console.log("MyRoom already exists");
+    console.log("InternetFamousCharles already exists");
   }
 
 });
